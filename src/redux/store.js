@@ -27,7 +27,7 @@ function* fetchAllGenres() {
     yield axios.get ('/api/genres');
     yield put ({
       type: 'SET_GENRES',
-      payload :genreResponse.data
+      payload: genreResponse.data
     })
   } catch (error) {
     console.log('fetch generes', error);
@@ -46,6 +46,7 @@ const movies = (state = [], action) => {
   switch (action.type) {
     case 'SET_MOVIES':
       return action.payload;
+      
     default:
       return state;
   }
